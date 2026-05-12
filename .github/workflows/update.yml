@@ -2,8 +2,7 @@ name: python V2rayCollector Script
 
 on:
   schedule:
-#    - cron: '*/60 * * * *'
-     - cron: '0 2 * * *'   # هر روز ساعت 02:00 UTC
+    - cron: '*/60 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -11,20 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-- name: Checkout repository
-  uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-- name: Set up Python
-  uses: actions/setup-python@v5
-        
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
           python-version: '3.10'
 
       - name: Configure Git
         run: |
-          git config --global user.email "holms.arak@gmail.com"
-          git config --global user.name "holms2012"
-          git remote set-url origin https://github.com/holms2012/V2rayCollector-py.git
+          git config --global user.email "vip.mahditaheri@gmail.com"
+          git config --global user.name "MhdiTaheri"
+          git remote set-url origin https://github.com/MhdiTaheri/V2rayCollector-py.git
       
       - name: Install dependencies
         run: |
